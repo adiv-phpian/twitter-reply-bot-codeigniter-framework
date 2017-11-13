@@ -21,7 +21,7 @@ class Reply extends CI_Controller
 
 	function index(){
 
-		if(date("H") > 6 || date("H") < 10) die("timeout");
+		if(date("H") < 6 || date("H") > 10) die("timeout");
 
 		$tweets = $this->reply_model->get_tweets();
 
