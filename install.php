@@ -58,7 +58,7 @@ if(isset($_POST['database'])){
 		if ($conn->connect_error) {
 		    echo "<tr><td>Connection failed: " . $conn->connect_error."</td></tr>";die;
 		}else{
-			  echo "<tr><td>Successfully connected to database</td></tr>";
+			  //echo "<tr><td>Successfully connected to database</td></tr>";
 				mysqli_query($conn, "SET FOREIGN_KEY_CHECKS = 0");
 				mysqli_query($conn, "drop table if exists files");
 				mysqli_query($conn, "drop table if exists messages");
@@ -95,7 +95,7 @@ if(isset($_POST['database'])){
 		mysqli_close($conn);
 		fclose($fp);
 
-		echo "<tr><td>Database imported successfully</td></tr>";
+		//echo "<tr><td>Database imported successfully</td></tr>";
 
 		if(!is_writable("main_config.php")) chmod("main_config.php",0777);
 
@@ -166,9 +166,13 @@ if(isset($_POST['database'])){
 ?>
 
 </table>
+
 <?php if(isset($_POST['host'])) { ?>
 <table>
 	<thead>
+		<th>
+     <h1>Application is url <a href="<?=$actual_link?>"><?=$actual_link?></a> </h1>
+    </th>
 		<th>
      <h1>You have paste following code into your crontab</h1>
     </th>
