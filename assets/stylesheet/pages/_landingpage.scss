@@ -1,0 +1,154 @@
+﻿.landing-page {
+
+    main.top {
+        position: relative;
+        display: block;
+        text-align: center;
+        height: auto;
+        min-height: auto;
+        padding-top: 100px;
+
+        img {
+            margin-bottom: 50px;
+        }
+
+        .slogan {
+            font-size: 36px;
+
+            .small {
+                padding: 30px 0 150px;
+                font-size: 24px;
+            }
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: -37.5px;
+            left: 50%;
+            margin-left: -37.5px;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background-image: url('../images/scroll.png');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: #fff;
+        }
+    }
+
+    > content {
+        display: block;
+        height: auto;
+
+        .blocks {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            width: 100%;
+            margin: 0px auto;
+            max-width: 1080px;
+
+            @media #{$tablet-down} {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .block {
+                float: left;
+                width: 33.33333%;
+
+                @media #{$tablet-down} {
+                    width: 100%;
+                    float: none;
+                    margin-bottom: 30px;
+                }
+
+                .image {
+                    margin-bottom: 30px;
+                }
+
+                .title {
+                    font-size: 24px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                .desc {
+                    font-size: 16px;
+                    color: #777777;
+                }
+            }
+        }
+    }
+
+    main.bottom {
+        position: relative;
+        display: block;
+        text-align: center;
+        height: auto;
+        min-height: auto;
+        padding-top: 60px;
+        overflow: hidden;
+
+
+
+        .title {
+            font-size: 36px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 420px;
+            padding: 10px 10px 35px 10px;
+            margin: 50px auto;
+            box-sizing: border-box;
+
+            @media #{$tablet-down} {
+                border-radius: 0;
+            }
+
+            .head {
+                background-color: #f1f1f1;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                margin-bottom: 15px;
+
+                .currency {
+                    font-size: 80px;
+                    font-size: 80px;
+                    height: 85px;
+                    padding-top: 20px;
+
+
+                    .prefix {
+                        font-size: 32px;
+                    }
+                }
+
+                .grey {
+                    font-size: 18px;
+                    padding-bottom: 30px;
+                }
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    padding: 15px 0;
+                    border-bottom: solid 1px #f1f1f1;
+                }
+            }
+
+            a.button {
+                padding-left: 40px;
+                padding-right: 40px;
+                border-radius: 5px;
+                margin-top: 30px;
+            }
+        }
+    }
+}

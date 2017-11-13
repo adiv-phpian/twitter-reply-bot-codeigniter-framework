@@ -1,0 +1,15 @@
+﻿.page-dashboard {
+
+    @media #{$tablet-down} {
+
+        .sidebar {
+            width: 100%;
+        }
+
+        content {
+            display: none;
+        }
+    }
+
+
+}

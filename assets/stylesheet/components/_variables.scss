@@ -1,0 +1,11 @@
+﻿
+$tablet-down: "only screen and (max-width : 768px)" !default;
+$laptop-down: "only screen and (max-width : 1024px)" !default;
+$tablet-up: "only screen and (min-width : 426px)" !default;
+$laptop-up: "only screen and (min-width : 769px)" !default;
+$tablet: "only screen and (min-width : 426px) and (max-width: 768px)" !default;
+$laptop: "only screen and (min-width : 769px) and (max-width: 1024px)" !default;
+$mobile: "only screen and (max-width : 425px)" !default;
+$pc: "only screen and (min-width : 1025px)" !default;
+
+

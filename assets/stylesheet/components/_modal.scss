@@ -1,0 +1,59 @@
+﻿.frame.modal {
+    padding: 40px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    border: solid 1px #d9d9d9;
+    border-radius: 10px;
+    padding-bottom: 100px;
+    background-image: url('../images/triangles_large.png');
+    background-position: center bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 20px auto;
+
+    &.modal-footer {
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    @media #{$mobile} {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        margin: 0;
+    }
+
+    hr {
+        display: block;
+        border-bottom: solid 2px #85b200;
+        width: 30px;
+        margin: 15px auto 40px;
+
+        &.small {
+            margin: 15px auto 20px;
+        }
+    }
+
+    input[type='button'], input[type='submit'] {
+        padding-left: 80px;
+        padding-right: 80px;
+        margin-top: 25px;
+    }
+
+    .modal-footer-links {
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+        font-size: 12px;
+        text-align: center;
+        color: #666666;
+
+        a, a:hover, a:visited, a:active {
+            color: #666666;
+            text-decoration: underline;
+        }
+    }
+}
