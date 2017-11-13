@@ -25,10 +25,10 @@ table{
       <td>Password: </td><td><input type="text" name="password"></td>
 		</tr><tr>
 		</tr><tr>
-			<td>Twitter API consumer key: </td><td><input type="text" name="t_key" value="YimJbhB9fTWbf081fCiJAZzrP"></td>
+			<td>Twitter API consumer key: </td><td><input type="text" name="t_key" value=""></td>
 		</tr><tr>
 		</tr><tr>
-			<td>Twitter API consumer secret: </td><td><input type="text" name="t_secret" value="egWWyOgmNP4imF51FuqQxrIR4jeRKPQZeXjAPdRuH7I8De3Tpb"></td>
+			<td>Twitter API consumer secret: </td><td><input type="text" name="t_secret" value=""></td>
 
 		</tr>
 
