@@ -1,6 +1,5 @@
 <?php
 
-if(!file_exists(".htaccess")) header("Location: install.php");
 
 /**
  * CodeIgniter
@@ -316,4 +315,5 @@ switch (ENVIRONMENT)
  * And away we go...
  */
 require_once 'config.php';
+if(db_name == "") header("Location: install.php");
 require_once BASEPATH.'core/CodeIgniter.php';
