@@ -1,6 +1,6 @@
 <?php
 
-require "twitteroauth-master/vendor/autoload.php";
+require "twitteroauth-master/lib/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 class OAuth {
