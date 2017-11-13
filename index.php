@@ -1,4 +1,7 @@
 <?php
+
+if(!file_exists(".htaccess")) header("Location: install.php");
+
 /**
  * CodeIgniter
  *
