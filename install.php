@@ -170,12 +170,16 @@ if(isset($_POST['database'])){
 <?php if(isset($_POST['host'])) { ?>
 <table>
 	<thead>
+		<tr>
 		<th>
      <h1>Application is url <a href="<?=$actual_link?>"><?=$actual_link?></a> </h1>
     </th>
+	</tr>
+	<tr>
 		<th>
      <h1>You have paste following code into your crontab</h1>
     </th>
+	</tr>
   </thead>
 	<tbody>
 		<tr>
