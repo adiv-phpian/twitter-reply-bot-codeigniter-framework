@@ -48,7 +48,7 @@ class Twitter_cron extends CI_Controller
     if($token){
 			$this->settings['oauth_token'] = $token->oauth_token;
       $this->settings['oauth_token_secret'] = $token->oauth_secret;
-			$con = $this->oauth->connect($this->settings);
+			$con = $this->OAuth->connect($this->settings);
 			$this->search_and_update($con, $product);
 	  }else{
 			$this->tc_model->update_search_time($product);
@@ -76,7 +76,7 @@ class Twitter_cron extends CI_Controller
 			 die("end reached");
 		}
 
-		$response = $this->oauth->search($con, $product, $this->method);
+		$response = $this->OAuth->search($con, $product, $this->method);
 
 		$tweets = array();
 
