@@ -96,12 +96,17 @@ if(isset($_POST['database'])){
 		fclose($fp);
 
 		//echo "<tr><td>Database imported successfully</td></tr>";
+    $fh = fopen("config.php", 'w');
+		fclose($fh);
+		$fh = fopen(".htaccess", 'w');
+		fclose($fh);
 
-		if(!is_writable("main_config.php")) chmod("main_config.php",0777);
+		if(!is_writable("config.php")) chmod("config.php",0777);
+		if(!is_writable(".htaccess")) chmod(".htaccess",0777);
 
 		$actual_link = str_replace("install.php", "", $actual_link);
 
-		if(!file_exists("config.php")) unlink("config.php");
+		//if(file_exists("config.php")) unlink("config.php");
 
 		$fh = fopen("config.php", 'w');
 
