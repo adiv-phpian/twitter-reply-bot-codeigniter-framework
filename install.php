@@ -149,7 +149,7 @@ if(isset($_POST['database'])){
 
 </table>
 
-<?php if($error == 1){ ?>
+<?php if($error == 1 || !isset($_POST['host'])){ ?>
 <form href="<?=$actual_link?>" method="post">
 	<table>
 		<thead><th colspan="2">Your MYSQL details</th></thead>
