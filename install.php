@@ -179,7 +179,7 @@ if(isset($_POST['database'])){
 </form>
 <?php } ?>
 
-<?php if(isset($_POST['host'])) { ?>
+<?php if(isset($_POST['host']) && $error == 0) { ?>
 <table>
 	<thead>
 		<tr>
