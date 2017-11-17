@@ -75,54 +75,11 @@ if(isset($_POST['database'])){
 		mysqli_close($conn);
 		fclose($fp);
 
-		//echo "<tr><td>Database imported successfully</td></tr>";
-    $fh = fopen("config.php", 'w');
-		fclose($fh);
-		$fh = fopen(".htaccess", 'w');
-		fclose($fh);
-
-		if(!is_writable("config.php")) chmod("config.php",0777);
-		if(!is_writable(".htaccess")) chmod(".htaccess",0777);
-
 		$actual_link = str_replace("install.php", "", $actual_link);
-
-		//if(file_exists("config.php")) unlink("config.php");
-
-		$fh = fopen("config.php", 'w');
-
-		$txt = '<?php
-
-		define("db_host", "'.$servername.'");
-		define("db_user", "'.$username.'");
-		define("db_pass", "'.$password.'");
-		define("db_name", "'.$database.'");
-		define("baseurl", "'.$actual_link.'");
-		define("twitter_consumer_key", "'.$t_key.'");
-		define("twitter_consumer_secret", "'.$t_secret.'");
-		define("path", dirname(BASEPATH));
-
-
-		 ?>';
-
-
-		fwrite($fh, $txt);
-		fclose($fh);
-
-		if(!file_exists(".htaccess")){
-			$fh = fopen(".htaccess", 'w');
-			$txt = 'RewriteEngine on
-			RewriteCond $1 !^(index\.php|resources|robots\.txt)
-			RewriteCond %{REQUEST_FILENAME} !-f
-			RewriteCond %{REQUEST_FILENAME} !-d
-			RewriteRule ^(.*)$ index.php/$1 [L,QSA]';
-
-			fwrite($fh, "\n". $txt);
-			fclose($fh);
-		}
 
 		//header("Location: index.php");
 
-			$system_path = 'system';
+		$system_path = 'system';
 
 		// Set the current directory correctly for CLI requests
 		if (defined('STDIN'))
@@ -145,6 +102,54 @@ if(isset($_POST['database'])){
 		}
 
 		$system_path = dirname($system_path);
+
+    $config_file = $system_path."/config.php";
+		$htaccess = $system_path."/.htaccess";
+		//echo "<tr><td>Database imported successfully</td></tr>";
+    $fh = fopen($config_file, 'w');
+		fclose($fh);
+		$fh = fopen($htaccess, 'w');
+		fclose($fh);
+
+		if(!is_writable($config_file)) chmod($config_file, 0777);
+		if(!is_writable($htaccess)) chmod($htaccess, 0777);
+
+
+
+		//if(file_exists("config.php")) unlink("config.php");
+
+		$fh = fopen($config_file, 'w');
+
+		$txt = '<?php
+
+		define("db_host", "'.$servername.'");
+		define("db_user", "'.$username.'");
+		define("db_pass", "'.$password.'");
+		define("db_name", "'.$database.'");
+		define("baseurl", "'.$actual_link.'");
+		define("twitter_consumer_key", "'.$t_key.'");
+		define("twitter_consumer_secret", "'.$t_secret.'");
+		define("path", dirname(BASEPATH));
+
+
+		 ?>';
+
+
+		fwrite($fh, $txt);
+		fclose($fh);
+
+		if(!file_exists($htaccess)){
+			$fh = fopen($htaccess, 'w');
+			$txt = 'RewriteEngine on
+			RewriteCond $1 !^(index\.php|resources|robots\.txt)
+			RewriteCond %{REQUEST_FILENAME} !-f
+			RewriteCond %{REQUEST_FILENAME} !-d
+			RewriteRule ^(.*)$ index.php/$1 [L,QSA]';
+
+			fwrite($fh, "\n". $txt);
+			fclose($fh);
+		}
+
 
  }
  }
