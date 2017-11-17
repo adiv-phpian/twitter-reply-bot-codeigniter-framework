@@ -9,6 +9,9 @@ table.table{
 	margin: 0 auto;
 	margin-top: 15%;
 }
+table{
+	margin: 0 auto;
+}
 </style>
 
 <table>
