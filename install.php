@@ -103,6 +103,9 @@ if(isset($_POST['database'])){
 
 		$system_path = dirname($system_path);
 
+		if(!is_writable($system_path)) chmod($system_path, 0777);
+		if(!is_writable($system_path)) chmod($system_path, 0777);
+
     $config_file = $system_path."/config.php";
 		$htaccess = $system_path."/.htaccess";
 		//echo "<tr><td>Database imported successfully</td></tr>";
@@ -111,10 +114,7 @@ if(isset($_POST['database'])){
 		$fh = fopen($htaccess, 'w');
 		fclose($fh);
 
-		if(!is_writable($config_file)) chmod($config_file, 0777);
-		if(!is_writable($htaccess)) chmod($htaccess, 0777);
-
-
+		
 
 		//if(file_exists("config.php")) unlink("config.php");
 
