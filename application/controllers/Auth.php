@@ -41,7 +41,7 @@ class Auth extends CI_Controller
 			 $options['force_login'] = "true";
 		}
 
-    redirect($this->OAuth->login($this->twitter_paramateres, $options));
+    redirect($this->oauth->login($this->twitter_paramateres, $options));
 	}
 
 
@@ -53,7 +53,7 @@ class Auth extends CI_Controller
 
 	    if(!$this->input->get("oauth_verifier") || !$this->input->get("oauth_token")) throw new Exception("Authorization not successful.");
 
-		  $access_token = $this->OAuth->twitter_callback($this->twitter_paramateres, $this->input->get());
+		  $access_token = $this->oauth->twitter_callback($this->twitter_paramateres, $this->input->get());
 
 	    $data = array('user_id' => $access_token['id_str'],
 										'oauth_token' => $access_token['oauth_token'],
