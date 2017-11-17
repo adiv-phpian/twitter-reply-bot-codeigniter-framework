@@ -103,8 +103,8 @@ if(isset($_POST['database'])){
 
 		$system_path = dirname($system_path);
 
-		$config_file = $system_path."/config1.php";
-		$htaccess = $system_path."/.htaccess1";
+		$config_file = $system_path."/config.php";
+		$htaccess = $system_path."/.htaccess";
 
 		/*if(!is_writable($system_path)) chmod($system_path, 0777);
 		if(!is_writable($system_path)) chmod($system_path, 0777);
