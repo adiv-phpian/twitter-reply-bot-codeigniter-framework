@@ -32,7 +32,7 @@ if(isset($_POST['database'])){
 		// Check connection
 		if ($conn->connect_error) {
 			  $error = 1;
-		    echo "<tr><td style='color:red;'>Connection failed: " . $conn->connect_error."</td></tr>";die;
+		    echo "<tr><td style='color:red;'>Connection failed: " . $conn->connect_error."</td></tr>";
 		}else{
 			  //echo "<tr><td>Successfully connected to database</td></tr>";
 				mysqli_query($conn, "SET FOREIGN_KEY_CHECKS = 0");
@@ -43,7 +43,7 @@ if(isset($_POST['database'])){
 				mysqli_query($conn, "drop table if exists tweets");
 				mysqli_query($conn, "drop table if exists users");
 				mysqli_query($conn, "SET FOREIGN_KEY_CHECKS = 1");
-		}
+
 
 		$filename = 'sql.sql';
 
@@ -143,6 +143,7 @@ if(isset($_POST['database'])){
 
 		$system_path = dirname($system_path);
 
+ }
  }
 
 ?>
