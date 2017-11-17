@@ -5,7 +5,7 @@ form{
 	margin: 0 auto;
 
 }
-table{
+table.table{
 	margin: 0 auto;
 	margin-top: 15%;
 }
@@ -152,7 +152,7 @@ if(isset($_POST['database'])){
 
 <?php if($error == 1 || !isset($_POST['host'])){ ?>
 <form href="<?=$actual_link?>" method="post">
-	<table>
+	<table class="table">
 		<thead><th colspan="2">Your MYSQL details</th></thead>
 		<tr>
       <td>Host:</td><td> <input type="text" name="host"></td>
