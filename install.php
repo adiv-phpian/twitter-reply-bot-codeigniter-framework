@@ -10,37 +10,12 @@ table{
 	margin-top: 15%;
 }
 </style>
-<?php if(!isset($_POST['host'])){ ?>
-<form href="<?=$actual_link?>" method="post">
-	<table>
-		<thead><th colspan="2">Your MYSQL details</th></thead>
-		<tr>
-      <td>Host:</td><td> <input type="text" name="host"></td>
-		</tr>
-		<tr>
-      <td>Database Name:</td><td> <input type="text" name="database"></td>
-		</tr><tr>
-      <td>User: </td><td><input type="text" name="username"></td>
-		</tr><tr>
-      <td>Password: </td><td><input type="text" name="password"></td>
-		</tr><tr>
-		</tr><tr>
-			<td>Twitter API consumer key: </td><td><input type="text" name="t_key" value=""></td>
-		</tr><tr>
-		</tr><tr>
-			<td>Twitter API consumer secret: </td><td><input type="text" name="t_secret" value=""></td>
 
-		</tr>
-
-		<tr>
-      <td><input type="submit" value="Install"></td>
-			</tr>
-		</table>
-</form>
-<?php } ?>
 <table>
 
 <?php
+
+$error = 0;
 
 if(isset($_POST['database'])){
   $servername = $_POST['host'];
@@ -56,7 +31,8 @@ if(isset($_POST['database'])){
 
 		// Check connection
 		if ($conn->connect_error) {
-		    echo "<tr><td>Connection failed: " . $conn->connect_error."</td></tr>";die;
+			  $error = 1;
+		    echo "<tr><td style='color:red;'>Connection failed: " . $conn->connect_error."</td></tr>";die;
 		}else{
 			  //echo "<tr><td>Successfully connected to database</td></tr>";
 				mysqli_query($conn, "SET FOREIGN_KEY_CHECKS = 0");
@@ -86,6 +62,7 @@ if(isset($_POST['database'])){
 			if (substr(trim($line), -1, 1) == ';') {
 				// Perform the query
 				if(!mysqli_query($conn, $templine)){
+					$error = 1;
 					print('Error performing query \'<strong>' . $templine . '\': ' . mysql_error() . '<br /><br />');die;
 				}
 				// Reset temp variable to empty
@@ -171,6 +148,35 @@ if(isset($_POST['database'])){
 ?>
 
 </table>
+
+<?php if($error == 1){ ?>
+<form href="<?=$actual_link?>" method="post">
+	<table>
+		<thead><th colspan="2">Your MYSQL details</th></thead>
+		<tr>
+      <td>Host:</td><td> <input type="text" name="host"></td>
+		</tr>
+		<tr>
+      <td>Database Name:</td><td> <input type="text" name="database"></td>
+		</tr><tr>
+      <td>User: </td><td><input type="text" name="username"></td>
+		</tr><tr>
+      <td>Password: </td><td><input type="text" name="password"></td>
+		</tr><tr>
+		</tr><tr>
+			<td>Twitter API consumer key: </td><td><input type="text" name="t_key" value=""></td>
+		</tr><tr>
+		</tr><tr>
+			<td>Twitter API consumer secret: </td><td><input type="text" name="t_secret" value=""></td>
+
+		</tr>
+
+		<tr>
+      <td><input type="submit" value="Install"></td>
+			</tr>
+		</table>
+</form>
+<?php } ?>
 
 <?php if(isset($_POST['host'])) { ?>
 <table>
