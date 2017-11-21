@@ -211,13 +211,13 @@ if(isset($_POST['database'])){
 			<td> <?=$actual_link?>twitter_cron/collect_tweets_for_new_products</td>
 		</tr>
     <tr>
-			<td> <?=$actual_link?>/twitter_cron/collect_tweets_for_new_products</td>
+			<td> <?=$actual_link?>twitter_cron/collect_tweets_for_new_products</td>
 		</tr>
 		<tr>
-			<td> <?=$actual_link?>/upload_images</td>
+			<td> <?=$actual_link?>upload_images</td>
 		</tr>
 		<tr>
-		<td>	<?=$actual_link?>/reply</td>
+		<td>	<?=$actual_link?>reply</td>
 		</tr>
  </td></tr>
 	</tbody>
