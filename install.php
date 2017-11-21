@@ -199,17 +199,28 @@ if(isset($_POST['database'])){
 	</tr>
 	<tr>
 		<th>
-     <h1>You have paste following code into your crontab</h1>
+     <h1>Run this url from some system or public cron job runner website</h1>
     </th>
+
 	</tr>
+	<tr><th>Run all url for every minute or extend your interval</th></tr>
   </thead>
-	<tbody>
+	<tbody >
+		<tr><td>URL</td></tr>
 		<tr>
-			<td>Interval</td><td>URL</td>
-			<td>Every Minute</td><td> <?=$actual_link?>/twitter_cron/collect_tweets_for_new_products</td>
-			<td>Every Minute</td><td> <?=$actual_link?>/index.php/twitter_cron/collect_tweets_for_new_products</td>
-			<td>Every Minute</td><td> <?=$actual_link?>/index.php/upload_images</td>
-			<td>Every Minute</td><td>	<?=$actual_link?>/index.php/reply</td>
+			<td> <?=$actual_link?>/twitter_cron/collect_tweets_for_new_products</td>
+		</tr>
+    <tr>
+
+
+			<td> <?=$actual_link?>/index.php/twitter_cron/collect_tweets_for_new_products</td>
+		</tr>
+		<tr>
+			<td> <?=$actual_link?>/index.php/upload_images</td>
+		</tr>
+		<tr>
+		<td>	<?=$actual_link?>/index.php/reply</td>
+		</tr>
  </td></tr>
 	</tbody>
 </table>
