@@ -1,10 +1,10 @@
 <?php
 
 $base_url = base_url();
-$asset_url = $base_url.'/assets/';
+//$asset_url = $base_url.'/assets/';
 
 ?>
-
+<?php $asset_url = str_replace("index.php/", "", base_url()).'assets/'; ?>
 
 <?php
 $old_password = array(

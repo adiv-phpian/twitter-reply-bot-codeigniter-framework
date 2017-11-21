@@ -20,7 +20,7 @@ class Dashboard extends CI_Controller
 
 			$data['title'] = "Dashboard - Tweet Intent";
 			$data['base_url'] = base_url();
-			$data['asset_url'] = base_url().'assets/';
+			$this->data['asset_url'] = str_replace("index.php/", "", base_url()).'assets/';
 
 			$data['user'] = $this->dashboard_model->get_user($this->user_id);
 
@@ -50,7 +50,7 @@ class Dashboard extends CI_Controller
 			$this->load->model("tc_model");
 			$data['title'] = "Dashboard - Tweet Intent";
 			$data['base_url'] = base_url();
-			$data['asset_url'] = base_url().'assets/';
+			$this->data['asset_url'] = str_replace("index.php/", "", base_url()).'assets/';
 
 			$data['user_id']	= $this->tank_auth->get_user_id();
 			$data['username'] = $this->tank_auth->get_username();
@@ -84,7 +84,7 @@ class Dashboard extends CI_Controller
 
 				$points = "[";
 
-				
+
 				foreach($tweets_counts as $key => $val){
 					$date = date("Y,m,d", strtotime("-1 months", strtotime($tweets_datetime[$key])));
 					$points .= "[Date.UTC($date), $val],";

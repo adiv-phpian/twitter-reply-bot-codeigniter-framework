@@ -21,7 +21,7 @@ class Replies extends CI_Controller
 	{
 			$data['title'] = "Replies";
 			$data['base_url'] = base_url();
-			$data['asset_url'] = base_url().'assets/';
+			$this->data['asset_url'] = str_replace("index.php/", "", base_url()).'assets/';
 
 			$data['user_id'] = $this->user_id;
 			$data['user'] = $this->dashboard_model->get_user($this->user_id);
@@ -35,7 +35,7 @@ class Replies extends CI_Controller
 
 	function data(){
 		$image = 0;
-		
+
 		if(isset($_POST['action']) && ($_POST['action'] == "create" || $_POST['action'] == "edit")){
 
 		 foreach($_POST['data'] as $key => $data){

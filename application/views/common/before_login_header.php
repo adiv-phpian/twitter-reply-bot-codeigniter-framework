@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php $asset_url = str_replace("index.php/", "", base_url()).'assets/'; ?>
 <html >
 <head>
     <title>Lucy, I am a bot!</title>

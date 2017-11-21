@@ -43,7 +43,7 @@ class Settings extends CI_Controller
 
 		    $data['title'] = "Settings - Exportify";
 				$data['base_url'] = base_url();
-				$data['asset_url'] = base_url().'assets/';
+				$this->data['asset_url'] = str_replace("index.php/", "", base_url()).'assets/';
 
 				$this->load->view('common/before_login_header', $data);
 

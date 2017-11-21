@@ -18,7 +18,7 @@ class Products extends CI_Controller
 	{
       $data['title'] = "Products - Tweet bot";
 			$data['base_url'] = base_url();
-			$data['asset_url'] = base_url().'assets/';
+			$this->data['asset_url'] = str_replace("index.php/", "", base_url()).'assets/';
 
 			$data['user'] = $this->dashboard_model->get_user($this->user_id);
 
@@ -60,7 +60,7 @@ class Products extends CI_Controller
 
  		$data['title'] = "Products - Tweet Intent";
  		$data['base_url'] = base_url();
- 		$data['asset_url'] = base_url().'assets/';
+ 		$this->data['asset_url'] = str_replace("index.php/", "", base_url()).'assets/';
 		$data['type'] = $type;
 		$data['id'] = $id;
 
@@ -103,7 +103,7 @@ class Products extends CI_Controller
 
 		$data['title'] = "Products - Tweet Intent";
 		$data['base_url'] = base_url();
-		$data['asset_url'] = base_url().'assets/';
+		$this->data['asset_url'] = str_replace("index.php/", "", base_url()).'assets/';
 
 		$product = $this->tc_model->check_access($id);
 

@@ -11,7 +11,7 @@ class Auth extends CI_Controller
 	{
 		parent::__construct();
 
-		$this->data['asset_url'] = base_url().'assets/site/';
+		$this->data['asset_url'] = str_replace("index.php/", "", base_url()).'assets/';
 
     $this->load->library("OAuth");
 		$this->load->model("auth_model");
@@ -25,6 +25,7 @@ class Auth extends CI_Controller
 		if ($this->session->userdata("user_id")) {
 				redirect('/dashboard/');
 		}
+
     $this->data['title'] = "Login with Twitter - ";
     $this->load->view("site/login", $this->data);
   }

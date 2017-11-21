@@ -75,7 +75,7 @@ if(isset($_POST['database'])){
 		mysqli_close($conn);
 		fclose($fp);
 
-		$actual_link = str_replace("install.php", "", $actual_link);
+		$actual_link = str_replace("install.php", "index.php/", $actual_link);
 
 		//header("Location: index.php");
 

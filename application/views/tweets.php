@@ -1,14 +1,14 @@
-
+<?php $asset_url = str_replace("index.php/", "", base_url()).'assets/'; ?>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.1/css/select.dataTables.min.css">
-	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/editor.dataTables.min.css">
-	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/resources/syntax/shCore.css">
-	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/resources/demo.css">
+	<link rel="stylesheet" type="text/css" href="<?=$asset_url?>/css/editor.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="<?=$asset_url?>/resources/syntax/shCore.css">
+	<link rel="stylesheet" type="text/css" href="<?=$asset_url?>/resources/demo.css">
 
 	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js">
 	</script>
-	<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
+	<script src="<?=$asset_url?>/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js">
 	</script>
@@ -16,9 +16,9 @@
 	</script>
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.2.1/js/dataTables.select.min.js">
 	</script>
-	<script type="text/javascript" language="javascript" src="<?=base_url()?>assets/js/dataTables.editor.min.js">
+	<script type="text/javascript" language="javascript" src="<?=$asset_url?>/js/dataTables.editor.min.js">
 	</script>
-	<script type="text/javascript" language="javascript" src="<?=base_url()?>assets/resources/syntax/shCore.js">
+	<script type="text/javascript" language="javascript" src="<?=$asset_url?>/resources/syntax/shCore.js">
 	</script>
 
 	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js">
@@ -109,7 +109,7 @@
 		        serverSide : true,
 						processing: true,
 						oLanguage: {
-		        sProcessing: "<img width='15%' src='"+base_url+"assets/images/ajax-loader.gif'>"
+		        sProcessing: "<img width='15%' src='<?=$asset_url?>/images/ajax-loader.gif'>"
 		        },
 		       columns: [
 
@@ -342,7 +342,7 @@
 
 	</body>
 
-	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?=$asset_url?>/css/bootstrap.min.css">
 
 	<!-- Modal -->
 	    <div class="modal fade" id="modal-view-tweet" role="dialog">

@@ -19,7 +19,7 @@ class Tweets extends CI_Controller
 	{
 			$data['title'] = "Apps - Tweets";
 			$data['base_url'] = base_url();
-			$data['asset_url'] = base_url().'assets/';
+			$this->data['asset_url'] = str_replace("index.php/", "", base_url()).'assets/';
 
 			$data['user_id'] = $this->user_id;
 			$data['user'] = $this->dashboard_model->get_user($this->user_id);

@@ -1,7 +1,7 @@
 
 <?php
 
-$asset_url = base_url().'assets/';
+//$asset_url = base_url().'assets/';
 
  ?>
 <!DOCTYPE html>
