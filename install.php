@@ -205,10 +205,11 @@ if(isset($_POST['database'])){
   </thead>
 	<tbody>
 		<tr>
-			<td>* * * * * php <?=$system_path?>/index.php twitter_cron collect_tweets_for_new_products<br>
-						*/5 * * * * php <?=$system_path?>/index.php twitter_cron collect_tweets_for_new_products<br>
-						* * * * * php <?=$system_path?>/index.php upload_images<br>
-						* * * * * php <?=$system_path?>/index.php reply
+			<td>Interval</td><td>URL</td>
+			<td>Every Minute</td><td> <?=$actual_link?>/twitter_cron/collect_tweets_for_new_products</td>
+			<td>Every Minute</td><td> <?=$actual_link?>/index.php/twitter_cron/collect_tweets_for_new_products</td>
+			<td>Every Minute</td><td> <?=$actual_link?>/index.php/upload_images</td>
+			<td>Every Minute</td><td>	<?=$actual_link?>/index.php/reply</td>
  </td></tr>
 	</tbody>
 </table>
